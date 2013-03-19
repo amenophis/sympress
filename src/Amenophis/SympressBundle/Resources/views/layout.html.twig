@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="{{ asset('/bundles/amenophissympress/css/bootstrap.css') }}" rel="stylesheet" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="{{ asset('/bundles/amenophissympress/css/bootstrap-responsive.css') }}" rel="stylesheet" />
+    </head>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Posts</li>
+                    <li class="active"><a href="{{ path('sympress_adminpost_list') }}">List</a></li>
+                    <li><a href="{{ path('sympress_adminpost_new') }}">New</a></li>
+                </ul>
+            </div>
+            <div class="span10">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+</html>

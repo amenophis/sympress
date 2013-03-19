@@ -1,0 +1,5 @@
+amenophis_sympress:
+    resource: "@AmenophisSympressBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
