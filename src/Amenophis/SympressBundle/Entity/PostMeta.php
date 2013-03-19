@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PostMeta
  *
- * @ORM\Table()
+ * @ORM\Table(name="post_meta")
  * @ORM\Entity(repositoryClass="Amenophis\SympressBundle\Entity\PostMetaRepository")
  */
 class PostMeta

@@ -11,9 +11,9 @@ class AdminPostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
+            ->add('title', 'text')
             ->add('content')
-            ->add('excerpt')
+            //->add('excerpt')
         ;
     }
 

@@ -8,11 +8,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Post
  *
- * @ORM\Table()
+ * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="Amenophis\SympressBundle\Entity\PostRepository")
  */
 class Post
 {
+    const STATUS_EMPTY        = '';
+    const STATUS_DELETED      = 'deleted';
+
     /**
      * @var integer
      *
@@ -62,12 +65,24 @@ class Post
      *
      * @ORM\Column(name="type", type="string", length=20)
      */
-    private $type;
+    private $type = 'post';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20)
+     */
+    private $status = '';
 
     /**
      * @ORM\OneToMany(targetEntity="PostMeta", mappedBy="post")
      */
     private $metas;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Amenophis\SympressUserBundle\Entity\User", inversedBy="posts")
+     */
+    private $author;
 
     public function __construct()
     {
@@ -253,5 +268,52 @@ class Post
     public function getMetas()
     {
         return $this->metas;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Amenophis\SympressUserBundle\Entity\User $user
+     * @return Post
+     */
+    public function setAuthor(\Amenophis\SympressUserBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Amenophis\SympressUserBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+    
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Post
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }
