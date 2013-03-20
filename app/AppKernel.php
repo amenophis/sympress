@@ -19,9 +19,11 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new Amenophis\SympressBundle\AmenophisSympressBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Amenophis\SympressUserBundle\AmenophisSympressUserBundle(),
+            new Amenophis\Sympress\CoreBundle\AmenophisSympressCoreBundle(),
+            new Amenophis\Sympress\UserBundle\AmenophisSympressUserBundle(),
+            new Amenophis\Sympress\AdminBundle\AmenophisSympressAdminBundle(),
+            new Amenophis\Sympress\ThemeBundle\AmenophisSympressThemeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

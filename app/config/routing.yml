@@ -1,10 +1,20 @@
-amenophis_sympress_user:
-    resource: "@AmenophisSympressUserBundle/Controller/"
+amenophis_sympress_theme:
+    resource: "@AmenophisSympressThemeBundle/Controller/"
     type:     annotation
     prefix:   /
 
-amenophis_sympress:
-    resource: "@AmenophisSympressBundle/Controller/"
+amenophis_sympress_admin:
+    resource: "@AmenophisSympressAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+amenophis_sympress_core:
+    resource: "@AmenophisSympressCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+amenophis_sympress_user:
+    resource: "@AmenophisSympressUserBundle/Controller/"
     type:     annotation
     prefix:   /
 

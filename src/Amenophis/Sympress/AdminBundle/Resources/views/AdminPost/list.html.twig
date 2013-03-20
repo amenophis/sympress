@@ -1,0 +1,41 @@
+{% extends 'AmenophisSympressAdminBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="nav nav-pills">
+        <li{% if status == '' %} class="active"{% endif %}>
+            <a href="{{ path('sympress_adminpost_list') }}">Tous ({{ all_count }})</a>
+        </li>
+        <li{% if status == 'deleted' %} class="active"{% endif %}>
+            <a href="{{ path('sympress_adminpost_list') }}?status=deleted">Corbeille ({{ deleted_count }})</a>
+        </li>
+    </ul>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th></th>
+            <th>Date</th>
+        </tr>
+        {% if posts|length == 0 %}
+            <tr>
+                <td colspan="4">Aucun article trouvé.</td>
+            </tr>
+        {% else %}
+            {% for post in posts %}
+                <tr>
+                    <td><a href="{{ path('sympress_adminpost_edit', { 'id' : post.id }) }}">{{ post.title }}</td>
+                    <td>{{ post.author }}</td>
+                    <td></td>
+                    <td>{{ post.createdAt|date("d/m/Y") }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th></th>
+            <th>Date</th>
+        </tr>
+    </table>
+{% endblock content %}
