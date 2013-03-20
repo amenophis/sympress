@@ -20,10 +20,10 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Amenophis\Sympress\CoreBundle\AmenophisSympressCoreBundle(),
-            new Amenophis\Sympress\UserBundle\AmenophisSympressUserBundle(),
-            new Amenophis\Sympress\AdminBundle\AmenophisSympressAdminBundle(),
-            new Amenophis\Sympress\ThemeBundle\AmenophisSympressThemeBundle(),
+            new Amenophis\Sympress\Bundle\CoreBundle\AmenophisSympressCoreBundle(),
+            new Amenophis\Sympress\Bundle\UserBundle\AmenophisSympressUserBundle(),
+            new Amenophis\Sympress\Bundle\AdminBundle\AmenophisSympressAdminBundle(),
+            new Amenophis\Sympress\Bundle\ThemeBundle\AmenophisSympressThemeBundle(),
             new Amenophis\SampleThemeBundle\AmenophisSampleThemeBundle(),
         );
 
