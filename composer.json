@@ -1,5 +1,5 @@
 {
-    "name": "Amenophis/sympress",
+    "name": "amenophis/sympress",
     "description": "Symfony Wordress like engine",
     "autoload": {
         "psr-0": { "": "src/" }
