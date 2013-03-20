@@ -6,14 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class EngineController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/")
+     * @Template("AmenophisSympressThemeBundle::home.html.twig")
      */
-    public function indexAction($name)
+    public function homeAction()
     {
-        return array('name' => $name);
+        return array();
     }
 }
