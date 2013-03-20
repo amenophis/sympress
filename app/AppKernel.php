@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Amenophis\Sympress\UserBundle\AmenophisSympressUserBundle(),
             new Amenophis\Sympress\AdminBundle\AmenophisSympressAdminBundle(),
             new Amenophis\Sympress\ThemeBundle\AmenophisSympressThemeBundle(),
+            new Amenophis\SampleThemeBundle\AmenophisSampleThemeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
